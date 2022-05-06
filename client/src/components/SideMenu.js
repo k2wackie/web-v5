@@ -7,8 +7,6 @@ const sideMenu = {
   minipjt: ["calc", "계산기"],
 };
 const SideMenu = ({ chkSideMenu }) => {
-  // const [sideList, setSideList] = useState("");
-
   useEffect(() => {
     sideList = (
       <div className="sideMenu">
