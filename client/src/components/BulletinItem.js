@@ -5,7 +5,7 @@ const BulletinItem = ({ _id, author, content, in_date }) => {
   const navigate = useNavigate();
 
   const goEdit = () => {
-    navigate(`edit/${_id}`);
+    navigate(`/bulletin/edit/${_id}`);
   };
 
   const date = new Date(in_date);

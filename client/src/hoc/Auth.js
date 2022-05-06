@@ -38,7 +38,7 @@ const Auth = (SpecificComponent, option, adminRoute = null) => {
     }, [navigate]);
     return (
       <AuthStateContext.Provider value={isAuth}>
-        <SpecificComponent />;
+        <SpecificComponent />
       </AuthStateContext.Provider>
     );
   };

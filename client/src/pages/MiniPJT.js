@@ -1,21 +1,20 @@
 import React from "react";
-
 import Header from "../components/Header";
 import SideMenu from "../components/SideMenu";
-import BulletinList from "../components/BulletinList";
+import Calculator from "../components/calculator";
 
-const Bulletin = () => {
+function MiniPJT() {
   return (
     <div className="HomePage">
       <Header />
       <div className="contents">
-        <SideMenu chkSideMenu={"bulletin"} />
+        <SideMenu chkSideMenu={"minipjt"} />
         <div className="bulletin">
-          <BulletinList />
+          <Calculator />
         </div>
       </div>
     </div>
   );
-};
+}
 
-export default React.memo(Bulletin);
+export default MiniPJT;

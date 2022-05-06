@@ -80,10 +80,8 @@
 }
 
 .sideMenu {
-  width: 10%;
   display: flex;
   justify-content: center;
-  /* border: 2px solid var(--line-color); */
 
   font-size: 18px;
   color: var(--font-color);

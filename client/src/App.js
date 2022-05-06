@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Bulletin from "./pages/Bulletin";
 import Auth from "./hoc/Auth";
+import MiniPJT from "./pages/MiniPJT";
 
 export const BulletinStateContext = React.createContext();
 export const BulletinDispatchContext = React.createContext();
@@ -74,6 +75,7 @@ function App() {
   const AuthNewPage = Auth(New, null);
   const AuthEditPage = Auth(Edit, true);
   const AuthLoginPage = Auth(Login, false);
+  const AuthMiniPage = Auth(MiniPJT, null);
 
   return (
     <BulletinStateContext.Provider value={data}>
@@ -82,12 +84,15 @@ function App() {
           <div className="App">
             <Routes>
               <Route path="/" element={<AuthHomePage />} />
-              <Route path="/bulletin" element={<AuthBulletinPage />} />
-              <Route path="/new" element={<AuthNewPage />} />
-              <Route path="/edit/:id" element={<AuthEditPage />} />
-              <Route path="/bulletin/edit/:id" element={<AuthEditPage />} />
+              {/* Login */}
               <Route path="/login" element={<AuthLoginPage />} />
               <Route path="/register" element={<Register />} />
+              {/* Bulletin Board */}
+              <Route path="/bulletin" element={<AuthBulletinPage />} />
+              <Route path="/bulletin/new" element={<AuthNewPage />} />
+              <Route path="/bulletin/edit/:id" element={<AuthEditPage />} />
+              {/* Mini Project */}
+              <Route path="/mini" element={<AuthMiniPage />} />
             </Routes>
           </div>
         </BrowserRouter>

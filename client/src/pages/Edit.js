@@ -29,7 +29,7 @@ const Edit = () => {
     <div>
       <Header />
       <div className="contents">
-        <SideMenu />
+        <SideMenu chkSideMenu={"bulletin"} />
         <div className="bulletin">
           {chosenData && (
             <BulletinEditor isEdit={true} chosenData={chosenData} />

@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className="HomePage">
       <Header />
-      <img src={imgA} style={{ width: "100%" }} />
+      <img alt="mainimage" src={imgA} style={{ width: "100%" }} />
       <div style={{ color: "white", fontSize: 20 }} className="contents">
         거인의 어깨에 올라서서 더 넓은 세상을 바라보라
       </div>
