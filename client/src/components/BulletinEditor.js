@@ -25,13 +25,13 @@ const BulletinEditor = ({ isEdit, chosenData, _id }) => {
     const _id = isEdit ? chosenData._id : null;
     onCreateEdit(author, content, _id, isEdit);
     // alert("저장 성공!");
-    navigate("/");
+    navigate("/bulletin");
   };
 
   const handleRemove = () => {
     if (window.confirm("정말 삭제하시겠습니까?")) {
       onRemove(chosenData._id);
-      navigate("/", { replace: true });
+      navigate("/bulletin", { replace: true });
     }
   };
 
