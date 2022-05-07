@@ -7,15 +7,13 @@ const sideMenu = {
   minipjt: ["calc", "계산기"],
 };
 const SideMenu = ({ chkSideMenu }) => {
-  useEffect(() => {
-    sideList = (
-      <div className="sideMenu">
-        <Link className="link" to={"/bulletin/" + sideMenu[chkSideMenu][0]}>
-          {sideMenu[chkSideMenu][1]}
-        </Link>
-      </div>
-    );
-  }, [chkSideMenu]);
+  sideList = (
+    <div className="sideMenu">
+      <Link className="link" to={"/bulletin/" + sideMenu[chkSideMenu][0]}>
+        {sideMenu[chkSideMenu][1]}
+      </Link>
+    </div>
+  );
 
   return <div>{sideList}</div>;
 };
