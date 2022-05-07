@@ -100,7 +100,7 @@
 }
 
 .bulletinList {
-  width: 70%;
+  width: 80%;
   color: var(--font-color);
   display: flex;
   flex-direction: column;
