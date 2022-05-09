@@ -1,13 +1,13 @@
-import Header from "../components/Header";
-import SideMenu from "../components/SideMenu";
+import React from "react";
+
+import SideBar from "../components/SideBar";
 import BulletinEditor from "../components/BulletinEditor";
 
 const New = () => {
   return (
     <div>
-      <Header />
       <div className="contents">
-        <SideMenu chkSideMenu={"bulletin"} />
+        <SideBar chkSideBar={"bulletin"} />
         <div className="bulletin">
           <BulletinEditor isEdit={false} />
         </div>
@@ -16,4 +16,4 @@ const New = () => {
   );
 };
 
-export default New;
+export default React.memo(New);

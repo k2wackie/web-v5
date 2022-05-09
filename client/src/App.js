@@ -9,6 +9,7 @@ import Register from "./pages/Register";
 import Bulletin from "./pages/Bulletin";
 import Auth from "./hoc/Auth";
 import MiniPJT from "./pages/MiniPJT";
+import Header from "./components/Header";
 
 export const BulletinStateContext = React.createContext();
 export const BulletinDispatchContext = React.createContext();
@@ -70,6 +71,7 @@ function App() {
     dispatch({ type: "DELETE", data: _id });
   };
 
+  const AuthHeader = Auth(Header, null);
   const AuthHomePage = Auth(Home, null);
   const AuthBulletinPage = Auth(Bulletin, true);
   const AuthNewPage = Auth(New, null);
@@ -82,6 +84,7 @@ function App() {
       <BulletinDispatchContext.Provider value={{ onCreateEdit, onRemove }}>
         <BrowserRouter>
           <div className="App">
+            <AuthHeader />
             <Routes>
               <Route path="/" element={<AuthHomePage />} />
               {/* Login */}
@@ -101,4 +104,4 @@ function App() {
   );
 }
 
-export default App;
+export default React.memo(App);

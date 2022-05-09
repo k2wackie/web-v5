@@ -1,14 +1,13 @@
-import Header from "../components/Header";
+import React from "react";
 import LoginComp from "../components/LoginComp";
 import "../css/Login.css";
 
 const Login = () => {
   return (
     <div className="loginPage">
-      <Header />
       <LoginComp />
     </div>
   );
 };
 
-export default Login;
+export default React.memo(Login);

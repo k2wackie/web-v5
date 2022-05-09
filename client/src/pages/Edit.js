@@ -1,9 +1,8 @@
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { BulletinStateContext } from "../App";
 
-import Header from "../components/Header";
-import SideMenu from "../components/SideMenu";
+import SideBar from "../components/SideBar";
 import BulletinEditor from "../components/BulletinEditor";
 
 const Edit = () => {
@@ -27,9 +26,8 @@ const Edit = () => {
 
   return (
     <div>
-      <Header />
       <div className="contents">
-        <SideMenu chkSideMenu={"bulletin"} />
+        <SideBar chkSideBar={"bulletin"} />
         <div className="bulletin">
           {chosenData && (
             <BulletinEditor isEdit={true} chosenData={chosenData} />
@@ -40,4 +38,4 @@ const Edit = () => {
   );
 };
 
-export default Edit;
+export default React.memo(Edit);

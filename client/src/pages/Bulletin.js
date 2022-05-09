@@ -1,15 +1,13 @@
 import React from "react";
 
-import Header from "../components/Header";
-import SideMenu from "../components/SideMenu";
+import SideBar from "../components/SideBar";
 import BulletinList from "../components/BulletinList";
 
 const Bulletin = () => {
   return (
     <div className="HomePage">
-      <Header />
       <div className="contents">
-        <SideMenu chkSideMenu={"bulletin"} />
+        <SideBar chkSideBar={"bulletin"} />
         <div className="bulletin">
           <BulletinList />
         </div>

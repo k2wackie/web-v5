@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 const MainMenu = () => {
@@ -22,4 +23,4 @@ const MainMenu = () => {
   );
 };
 
-export default MainMenu;
+export default React.memo(MainMenu);

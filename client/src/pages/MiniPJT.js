@@ -1,14 +1,12 @@
 import React from "react";
-import Header from "../components/Header";
-import SideMenu from "../components/SideMenu";
+import SideBar from "../components/SideBar";
 import Calculator from "../components/calculator";
 
 function MiniPJT() {
   return (
     <div className="HomePage">
-      <Header />
       <div className="contents">
-        <SideMenu chkSideMenu={"minipjt"} />
+        <SideBar chkSideBar={"minipjt"} />
         <div className="bulletin">
           <Calculator />
         </div>
@@ -17,4 +15,4 @@ function MiniPJT() {
   );
 }
 
-export default MiniPJT;
+export default React.memo(MiniPJT);

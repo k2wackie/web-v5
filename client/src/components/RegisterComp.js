@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import useChkID from "../hooks/useChkID";
 import useRegist from "../hooks/useRegist";
@@ -77,4 +77,4 @@ const RegisterComp = () => {
   );
 };
 
-export default RegisterComp;
+export default React.memo(RegisterComp);

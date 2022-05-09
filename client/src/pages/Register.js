@@ -1,13 +1,12 @@
-import Header from "../components/Header";
+import React from "react";
 import RegisterComp from "../components/RegisterComp";
 
 const Register = () => {
   return (
     <div className="registerPage">
-      <Header />
       <RegisterComp />
     </div>
   );
 };
 
-export default Register;
+export default React.memo(Register);
