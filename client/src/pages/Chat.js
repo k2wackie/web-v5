@@ -6,7 +6,8 @@ import { UserNameStateContext } from "../auth/Auth";
 import ChatCard from "./sections/ChatCard";
 import axios from "axios";
 
-const server = "https://ackie-pjt.herokuapp.com/";
+// const server = "http://localhost:5000";
+const server = "https://ackie-pjt.herokuapp.com";
 const socket = io(server);
 
 const Chat = () => {
@@ -31,8 +32,8 @@ const Chat = () => {
       setNewChat(messageFromBackEnd);
     });
     const data = chat ? (newChat ? chat.concat(newChat) : chat) : newChat;
-    setSumChat(data);
-  }, [chat, newChat]);
+    setChat(data);
+  }, [newChat]);
 
   const handleChange = (e) => {
     const inputMSG = e.target.value;
@@ -56,7 +57,7 @@ const Chat = () => {
     });
 
     setChatMessage("");
-    setChat(sumChat);
+    // setChat(sumChat);
   };
   useEffect(() => {
     messagesEnd.current.scrollIntoView({
