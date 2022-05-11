@@ -5,10 +5,10 @@ import BulletinList from "../components/BulletinList";
 
 const Bulletin = () => {
   return (
-    <div className="HomePage">
+    <div>
       <div className="contents">
         <SideBar chkSideBar={"bulletin"} />
-        <div className="bulletin">
+        <div className="board">
           <BulletinList />
         </div>
       </div>

@@ -8,7 +8,7 @@ const New = () => {
     <div>
       <div className="contents">
         <SideBar chkSideBar={"bulletin"} />
-        <div className="bulletin">
+        <div className="board">
           <BulletinEditor isEdit={false} />
         </div>
       </div>

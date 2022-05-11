@@ -1,6 +1,6 @@
 "use strict";
 
-const Bulletin = require("../model/Bulletin");
+const Bulletin = require("./Bulletin");
 
 const process = {
   read: async (req, res) => {

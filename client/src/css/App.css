@@ -9,7 +9,7 @@
   --login-color: #222222;
 }
 
-.Header {
+.NavBar {
   height: 5vmax;
   /* padding-left: 30px; */
   border-bottom: 5px solid var(--line-color);
@@ -93,7 +93,7 @@
   color: var(--font-color);
 }
 
-.bulletin {
+.board {
   width: 90%;
   display: flex;
   justify-content: center;

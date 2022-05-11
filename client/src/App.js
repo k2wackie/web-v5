@@ -5,11 +5,12 @@ import New from "./pages/New";
 import Home from "./pages/Home";
 import Edit from "./pages/Edit";
 import Login from "./pages/Login";
-import Register from "./pages/Register";
+import UserRegister from "./pages/UserRegister";
 import Bulletin from "./pages/Bulletin";
-import Auth from "./hoc/Auth";
+import Auth from "./auth/Auth";
 import MiniPJT from "./pages/MiniPJT";
-import Header from "./components/Header";
+import NavBar from "./components/NavBar";
+import Chat from "./pages/Chat";
 
 export const BulletinStateContext = React.createContext();
 export const BulletinDispatchContext = React.createContext();
@@ -71,31 +72,35 @@ function App() {
     dispatch({ type: "DELETE", data: _id });
   };
 
-  const AuthHeader = Auth(Header, null);
+  const AuthNavBar = Auth(NavBar, null);
   const AuthHomePage = Auth(Home, null);
   const AuthBulletinPage = Auth(Bulletin, true);
-  const AuthNewPage = Auth(New, null);
+  const AuthNewPage = Auth(New, true);
   const AuthEditPage = Auth(Edit, true);
   const AuthLoginPage = Auth(Login, false);
-  const AuthMiniPage = Auth(MiniPJT, null);
+  const AuthUserRegisterPage = Auth(UserRegister, false);
+  const AuthMiniPage = Auth(MiniPJT, true);
+  const AuthChatPage = Auth(Chat, true);
 
   return (
     <BulletinStateContext.Provider value={data}>
       <BulletinDispatchContext.Provider value={{ onCreateEdit, onRemove }}>
         <BrowserRouter>
           <div className="App">
-            <AuthHeader />
+            <AuthNavBar />
             <Routes>
               <Route path="/" element={<AuthHomePage />} />
               {/* Login */}
               <Route path="/login" element={<AuthLoginPage />} />
-              <Route path="/register" element={<Register />} />
+              <Route path="/register" element={<AuthUserRegisterPage />} />
               {/* Bulletin Board */}
               <Route path="/bulletin" element={<AuthBulletinPage />} />
               <Route path="/bulletin/new" element={<AuthNewPage />} />
               <Route path="/bulletin/edit/:id" element={<AuthEditPage />} />
               {/* Mini Project */}
               <Route path="/mini" element={<AuthMiniPage />} />
+              {/* Chat Menu */}
+              <Route path="/chat" element={<AuthChatPage />} />
             </Routes>
           </div>
         </BrowserRouter>

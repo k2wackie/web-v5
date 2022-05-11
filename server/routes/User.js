@@ -2,7 +2,7 @@
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 var jwt = require("jsonwebtoken");
-const { UserStorage } = require("../model/UserStorage");
+const { UserStorage } = require("../models/UserStorage");
 
 class User {
   constructor(body) {
@@ -58,9 +58,10 @@ class User {
 
   async register() {
     const client = this.body;
+    const userName = client.userName;
     const userEmail = client.userEmail;
     const userPW = client.userPW;
-    const userData = { email: userEmail, password: userPW };
+    const userData = { name: userName, email: userEmail, password: userPW };
     const user = new UserStorage(userData);
     try {
       user.save((err) => {

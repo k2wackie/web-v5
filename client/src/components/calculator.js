@@ -35,11 +35,11 @@ function Calculator() {
       calcB.push(e.target.value);
       numTwo = parseInt(calcB.join(""));
       setCalc(numTwo);
-    } else if (parseInt(numOne + 1) && !parseInt(e.target.value * 1 + 1)) {
+    } else if (parseInt(numOne) + 1 && !parseInt(e.target.value * 1 + 1)) {
       op = e.target.value;
       switch (op) {
         case "+":
-          result = numOne + (parseInt(numTwo) || 0);
+          result = parseInt(numOne) + (parseInt(numTwo) || 0);
           break;
         case "-":
           result = numOne - (parseInt(numTwo) || 0);

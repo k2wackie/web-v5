@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import MainMenu from "./MainMenu";
-import { AuthStateContext } from "../hoc/Auth";
+import { AuthStateContext } from "../auth/Auth";
 import uselogout from "../hooks/useLogout";
 
-const Header = () => {
+const NavBar = () => {
   const isAuth = useContext(AuthStateContext);
   const navigate = useNavigate();
 
@@ -15,7 +15,7 @@ const Header = () => {
   };
 
   return (
-    <div className="Header">
+    <div className="NavBar">
       <Link className="logo link" to="/">
         ACKIE PJT
       </Link>
@@ -33,4 +33,4 @@ const Header = () => {
   );
 };
 
-export default React.memo(Header);
+export default React.memo(NavBar);

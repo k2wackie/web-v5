@@ -14,11 +14,11 @@ const MainMenu = () => {
           게시판
         </Link>
       </div>
-      {/* <div>
+      <div>
         <Link className="link" to="/chat">
           채팅
         </Link>
-      </div> */}
+      </div>
     </div>
   );
 };

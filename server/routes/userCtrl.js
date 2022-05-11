@@ -1,5 +1,5 @@
 "use strict";
-const User = require("../model/User");
+const User = require("./User");
 
 const process = {
   login: async (req, res) => {
@@ -16,7 +16,7 @@ const process = {
       .json(response);
   },
 
-  create: async (req, res) => {
+  register: async (req, res) => {
     const user = new User(req.body);
     const response = await user.register();
     const url = {
@@ -34,7 +34,8 @@ const process = {
       status: res.err ? 400 : 200,
     };
     return res.status(url.status).json({
-      user_ID: req.user.user_ID,
+      userName: req.user.name,
+      user_ID: req.user._id,
       isAuth: true,
     });
   },

@@ -38,6 +38,7 @@ const useLogin = (userInputData) => {
     })
       .then((res) => res.json())
       .then((data) => {
+        // console.log(data);
         // setNewUserData(data[0]);
         if (data.success) {
           navigate("/", { replace: true });

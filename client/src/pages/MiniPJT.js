@@ -4,10 +4,10 @@ import Calculator from "../components/calculator";
 
 function MiniPJT() {
   return (
-    <div className="HomePage">
+    <div>
       <div className="contents">
         <SideBar chkSideBar={"minipjt"} />
-        <div className="bulletin">
+        <div className="board">
           <Calculator />
         </div>
       </div>

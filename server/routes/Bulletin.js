@@ -1,5 +1,5 @@
 "use strict";
-const { BulletinStorage } = require("../model/BulletinStorage");
+const { BulletinStorage } = require("../models/BulletinStorage");
 
 class Bulletin {
   constructor(body) {

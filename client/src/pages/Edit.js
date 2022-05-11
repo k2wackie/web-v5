@@ -28,7 +28,7 @@ const Edit = () => {
     <div>
       <div className="contents">
         <SideBar chkSideBar={"bulletin"} />
-        <div className="bulletin">
+        <div className="board">
           {chosenData && (
             <BulletinEditor isEdit={true} chosenData={chosenData} />
           )}
