@@ -6,7 +6,7 @@ import { UserNameStateContext } from "../auth/Auth";
 import ChatCard from "./sections/ChatCard";
 import axios from "axios";
 
-const server = "http://localhost:5000";
+const server = "https://ackie-pjt.herokuapp.com/";
 const socket = io(server);
 
 const Chat = () => {
