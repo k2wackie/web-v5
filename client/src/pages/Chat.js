@@ -17,6 +17,7 @@ const Chat = () => {
 
   const [chat, setChat] = useState("");
   const [newChat, setNewChat] = useState();
+  const [sumChat, setSumChat] = useState();
 
   useEffect(() => {
     const getChat = axios.get(`/api/chat/getchats`).then((response) => {
@@ -30,8 +31,8 @@ const Chat = () => {
       setNewChat(messageFromBackEnd);
     });
     const data = chat ? (newChat ? chat.concat(newChat) : chat) : newChat;
-    setChat(data);
-  }, [chat]);
+    setSumChat(data);
+  }, [chat, newChat]);
 
   const handleChange = (e) => {
     const inputMSG = e.target.value;
@@ -65,8 +66,8 @@ const Chat = () => {
 
   const renderCards = () => {
     return (
-      chat &&
-      chat.map((data) => (
+      sumChat &&
+      sumChat.map((data) => (
         <ChatCard
           key={data._id}
           {...data}
