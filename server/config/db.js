@@ -7,7 +7,7 @@ const { ChatStorage } = require("../models/ChatStorage");
 const server = require("http").createServer(app);
 const io = require("socket.io")(server, {
   cors: {
-    origin: "https://ackie-pjt.herokuapp.com/",
+    origin: "*",
     methods: ["GET", "POST"],
   },
 });
