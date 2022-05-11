@@ -6,19 +6,19 @@ import { UserNameStateContext } from "../auth/Auth";
 import ChatCard from "./sections/ChatCard";
 import axios from "axios";
 
-// const server = "http://localhost:5000";
-const server = "https://ackie-pjt.herokuapp.com";
+const server = "http://localhost:5000";
+// const server = "https://ackie-pjt.herokuapp.com";
 const socket = io(server);
 
 const Chat = () => {
   const messagesEnd = useRef();
+  const userEmailInput = useRef();
 
   const userDB = useContext(UserNameStateContext);
   const [chatMessage, setChatMessage] = useState("");
 
   const [chat, setChat] = useState("");
   const [newChat, setNewChat] = useState();
-  const [sumChat, setSumChat] = useState();
 
   useEffect(() => {
     const getChat = axios.get(`/api/chat/getchats`).then((response) => {
@@ -57,7 +57,7 @@ const Chat = () => {
     });
 
     setChatMessage("");
-    // setChat(sumChat);
+    userEmailInput.current.focus();
   };
   useEffect(() => {
     messagesEnd.current.scrollIntoView({
@@ -79,6 +79,11 @@ const Chat = () => {
     );
   };
 
+  const onKeyPress = (e) => {
+    if (e.key == "Enter") {
+      submitChatMessage(e);
+    }
+  };
   return (
     <div className="chat">
       <div className="contents">
@@ -90,10 +95,12 @@ const Chat = () => {
           </div>
           <div style={{ display: "flex" }}>
             <input
+              ref={userEmailInput}
               style={{ width: "100%", borderRadius: 5, border: 0 }}
               name="chat"
               type="text"
               value={chatMessage}
+              onKeyPress={onKeyPress}
               onChange={handleChange}
               placeholder="대화를 입력하세요."
             />
