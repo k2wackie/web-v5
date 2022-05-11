@@ -56,6 +56,7 @@ const Chat = () => {
     });
 
     setChatMessage("");
+    setChat(sumChat);
   };
   useEffect(() => {
     messagesEnd.current.scrollIntoView({
@@ -66,8 +67,8 @@ const Chat = () => {
 
   const renderCards = () => {
     return (
-      sumChat &&
-      sumChat.map((data) => (
+      chat &&
+      chat.map((data) => (
         <ChatCard
           key={data._id}
           {...data}
