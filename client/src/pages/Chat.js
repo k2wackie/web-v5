@@ -31,7 +31,7 @@ const Chat = () => {
     });
     const data = chat ? (newChat ? chat.concat(newChat) : chat) : newChat;
     setChat(data);
-  }, [newChat, chat.length]);
+  }, [chat]);
 
   const handleChange = (e) => {
     const inputMSG = e.target.value;
