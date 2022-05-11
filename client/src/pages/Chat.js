@@ -6,7 +6,7 @@ import { UserNameStateContext } from "../auth/Auth";
 import ChatCard from "./sections/ChatCard";
 import axios from "axios";
 
-const server = "*";
+const server = "https://ackie-pjt.herokuapp.com/";
 const socket = io(server);
 
 const Chat = () => {
@@ -101,6 +101,7 @@ const Chat = () => {
                 borderRadius: 15,
                 backgroundColor: "#eecc0b",
                 border: 0,
+                cursor: "pointer",
               }}
               onClick={submitChatMessage}
             >
