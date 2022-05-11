@@ -1,16 +1,12 @@
 const mongoose = require("mongoose");
 const config = require("./key");
 const app = require("../server");
+const socketIO = require("socket.io");
 
 const { ChatStorage } = require("../models/ChatStorage");
 
 const server = require("http").createServer(app);
-const io = require("socket.io")(server, {
-  cors: {
-    origin: "*",
-    methods: ["GET", "POST"],
-  },
-});
+const io = socketIO(server);
 
 module.exports = connect = mongoose
   .connect(config.mongoURI, {
